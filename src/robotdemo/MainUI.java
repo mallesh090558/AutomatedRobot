@@ -6,7 +6,6 @@
 package robotdemo;
 
 import java.awt.AWTException;
-import static java.awt.Frame.ICONIFIED;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import static java.awt.Frame.NORMAL;
 import java.awt.Image;
@@ -90,7 +89,7 @@ public class MainUI extends javax.swing.JFrame {
             });
 
             popup.add(defaultItem);
-            trayIcon=new TrayIcon(image, "SystemTray Demo", popup);
+            trayIcon=new TrayIcon(image, "AUTOMATED ROBOT", popup);
             trayIcon.setImageAutoSize(true);
         }
         else
@@ -156,6 +155,7 @@ public class MainUI extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         start_record = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -177,7 +177,7 @@ public class MainUI extends javax.swing.JFrame {
 
         jLabel4.setText("For Starting  Moke Record ");
 
-        start_listener.setText("SUBMIT");
+        start_listener.setText("START LISTENER");
         start_listener.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 start_listenerActionPerformed(evt);
@@ -195,6 +195,13 @@ public class MainUI extends javax.swing.JFrame {
 
         jLabel6.setText("For Stopping Moke Record  Press CTRL+Q ( The Interface available again ) !");
 
+        jButton1.setText("CLEAR TOKENS");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -204,11 +211,16 @@ public class MainUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(126, 126, 126)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(help))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(start_record, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel6)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -219,13 +231,13 @@ public class MainUI extends javax.swing.JFrame {
                                     .addComponent(jLabel5)
                                     .addComponent(start_action))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
-                                .addComponent(start_listener)
-                                .addGap(25, 25, 25))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(start_record, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
-                            .addComponent(jLabel6))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(start_listener)
+                                        .addGap(25, 25, 25))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jButton1)
+                                        .addGap(20, 20, 20)))))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -249,7 +261,9 @@ public class MainUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(start_action)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(start_action)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addGap(20, 20, 20))
@@ -309,11 +323,16 @@ public class MainUI extends javax.swing.JFrame {
         {
             if(!jnae.isloadingdata)
                 break;
+            System.out.println("IN MAIN UI : LOADING DATA SUCCESSFULL");
         }
         tray.remove(trayIcon);
         setVisible(true);
         System.out.println("Tray icon removed");
     }//GEN-LAST:event_start_recordActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jnae.loadingdata="";
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**                                                                     
      * 
@@ -359,6 +378,7 @@ public class MainUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton help;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

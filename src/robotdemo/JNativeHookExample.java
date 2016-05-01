@@ -27,7 +27,7 @@ public class JNativeHookExample implements NativeKeyListener, NativeMouseListene
 {
 /* Key Pressed */
     boolean isloadingdata;
-    private String loadingdata;
+    String loadingdata;
     
     private int ctrlprsed=0;
     private int ctrlrlsed=1;
@@ -92,7 +92,7 @@ ple object and initialze native hook. */
         System.out.println("VARIABLES:-\tkillSession\t:\t"+ae.killsession+"\tisloadingdata\t:\t"+isloadingdata);
         
         this.delaytime=System.currentTimeMillis()-this.currenttime;
-        System.out.println("Key Pressed: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
+        //System.out.println("Key Pressed: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
         
         if (e.getKeyCode() ==NativeKeyEvent.VC_ESCAPE)
         {
@@ -128,14 +128,14 @@ ple object and initialze native hook. */
             this.escprsed=1;
             this.escrlsed=0;
         }
-        System.out.println("VALUES:"+this.qprsed+"\t"+this.ctrlprsed+"\t"+this.isloadingdata);
+        //System.out.println("VALUES:"+this.qprsed+"\t"+this.ctrlprsed+"\t"+this.isloadingdata);
         if(this.qprsed==1 && this.ctrlprsed==1 && isloadingdata==false)
         {
-            //this.isloadingdata=true;
+            this.isloadingdata=true;
         }
 	else if(this.qprsed==1 && this.ctrlprsed==1 && isloadingdata==true)
             this.isloadingdata=false;
-	else if(this.escprsed==1 && this.f11prsed==1)
+	else if((this.escprsed==1 && this.f11prsed==1) || (this.escprsed==1 && this.qprsed==1))
         {
             System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@REACHED KILL VARIABLE LOCATION@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
             ae.killsession=true;
@@ -148,7 +148,7 @@ ple object and initialze native hook. */
     public void nativeKeyReleased(NativeKeyEvent e) 
     {
         this.delaytime=System.currentTimeMillis()-this.currenttime;
-        System.out.println("Key Released: " + e.getKeyCode());
+        //System.out.println("Key Released: " + e.getKeyCode());
         if(e.getKeyCode()==NativeKeyEvent.VC_CONTROL_L)
         {
             this.ctrlrlsed=1;
@@ -177,7 +177,7 @@ t from this call */
     @Override
     public void nativeKeyTyped(NativeKeyEvent e) 
     {
-        System.out.println("Key Typed: " + e.getKeyText(e.getKeyCode()));
+        //System.out.println("Key Typed: " + e.getKeyText(e.getKeyCode()));
         //this.LoadDatatoFilefromKey(e,'t');
     }
     
@@ -185,7 +185,7 @@ t from this call */
     public void nativeMouseClicked(NativeMouseEvent nme) 
     {
         this.delaytime=System.currentTimeMillis()-this.currenttime;
-        System.out.println("Mouse Button: "+nme.getButton()+"\t\t-->"+nme.getPoint());
+        //System.out.println("Mouse Button: "+nme.getButton()+"\t\t-->"+nme.getPoint());
         this.LoadDatatoFilefromMouse(nme,'c');
         this.currenttime=System.currentTimeMillis();
     }
@@ -194,7 +194,7 @@ t from this call */
     public void nativeMousePressed(NativeMouseEvent nme) 
     {
         this.delaytime=System.currentTimeMillis()-this.currenttime;
-        System.out.println("Mouse Button: "+nme.getButton()+"\t\t-->"+nme.getPoint());
+        //System.out.println("Mouse Button: "+nme.getButton()+"\t\t-->"+nme.getPoint());
         this.LoadDatatoFilefromMouse(nme,'p');
         this.currenttime=System.currentTimeMillis();
     }
@@ -203,7 +203,7 @@ t from this call */
     public void nativeMouseReleased(NativeMouseEvent nme) 
     {
         this.delaytime=System.currentTimeMillis()-this.currenttime;
-        System.out.println("Mouse Button: "+nme.getButton()+"\t\t-->"+nme.getPoint());
+        //System.out.println("Mouse Button: "+nme.getButton()+"\t\t-->"+nme.getPoint());
         this.LoadDatatoFilefromMouse(nme,'r');
         this.currenttime=System.currentTimeMillis();
     }
@@ -211,7 +211,7 @@ t from this call */
     public void nativeMouseMoved(NativeMouseEvent nme) 
     {
         this.delaytime=System.currentTimeMillis()-this.currenttime;
-        System.out.println("Mouse Moved\t\t-->"+nme.getPoint());
+        //System.out.println("Mouse Moved\t\t-->"+nme.getPoint());
         this.LoadDatatoFilefromMouse(nme,'m');
     }
 
@@ -219,7 +219,7 @@ t from this call */
     public void nativeMouseDragged(NativeMouseEvent nme) 
     {
         this.delaytime=System.currentTimeMillis()-this.currenttime;
-        System.out.println("Mouse Dragged:"+nme.getSource()+"\t\t-->"+nme.getPoint());
+        //System.out.println("Mouse Dragged:"+nme.getSource()+"\t\t-->"+nme.getPoint());
         this.LoadDatatoFilefromMouse(nme,'d');
     }
     
@@ -232,7 +232,9 @@ t from this call */
             //System.out.println(loadingdata);
         }
         else
-            System.out.println("LOADING IS CANCELLED");
+        {
+            //System.out.println("LOADING IS CANCELLED");
+        }
     }
     public void LoadDatatoFilefromMouse(NativeMouseEvent e,char status)
     {
@@ -243,7 +245,8 @@ t from this call */
             //System.out.println(loadingdata);
         }
         else
-            System.out.println("LOADING IS CANCELLED");
-    
+        {
+            //System.out.println("LOADING IS CANCELLED");
+        }
     }
 }

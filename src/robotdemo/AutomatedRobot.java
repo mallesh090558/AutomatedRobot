@@ -11,6 +11,7 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.Hashtable;
+import org.jnativehook.keyboard.NativeKeyEvent;
 
 /**
  *
@@ -31,6 +32,10 @@ public class AutomatedRobot
         System.out.println("REACHED ROBOT END:\n\n");
         hk=new Hashtable<Integer, Integer>();
 
+        /*
+        STRUCTURE OF HASH STRING
+        hk(CAPTURE_EVENT_KEY_CODE,KEY_EVENT_KEY_CODE)
+        
         hk.put(1,27);
         hk.put(59,112);
         hk.put(60,113);
@@ -123,6 +128,112 @@ public class AutomatedRobot
         hk.put(3639,154);
         hk.put(70,145);
         hk.put(3653,19);
+        */
+        
+        hk.put(NativeKeyEvent.VC_ESCAPE,KeyEvent.VK_ESCAPE);
+        hk.put(NativeKeyEvent.VC_F1,KeyEvent.VK_F1);
+        hk.put(NativeKeyEvent.VC_F2,KeyEvent.VK_F2);
+        hk.put(NativeKeyEvent.VC_F3,KeyEvent.VK_F3);
+        hk.put(NativeKeyEvent.VC_F4,KeyEvent.VK_F4);
+        hk.put(NativeKeyEvent.VC_F5,KeyEvent.VK_F5);
+        hk.put(NativeKeyEvent.VC_F6,KeyEvent.VK_F6);
+        hk.put(NativeKeyEvent.VC_F7,KeyEvent.VK_F7);
+        hk.put(NativeKeyEvent.VC_F8,KeyEvent.VK_F8);
+        hk.put(NativeKeyEvent.VC_F9,KeyEvent.VK_F9);
+        hk.put(NativeKeyEvent.VC_F10,KeyEvent.VK_F10);
+        hk.put(NativeKeyEvent.VC_F11,KeyEvent.VK_F11);
+        hk.put(NativeKeyEvent.VC_F12,KeyEvent.VK_F12);
+        hk.put(NativeKeyEvent.VC_PRINTSCREEN,KeyEvent.VK_PRINTSCREEN);
+        hk.put(NativeKeyEvent.VC_SCROLL_LOCK,KeyEvent.VK_SCROLL_LOCK);
+        hk.put(NativeKeyEvent.VC_PAUSE, KeyEvent.VK_PAUSE);
+        hk.put(NativeKeyEvent.VC_QUOTE,KeyEvent.VK_QUOTE);
+        hk.put(NativeKeyEvent.VC_1, KeyEvent.VK_1);
+        hk.put(NativeKeyEvent.VC_2, KeyEvent.VK_2);
+        hk.put(NativeKeyEvent.VC_3, KeyEvent.VK_3);
+        hk.put(NativeKeyEvent.VC_4, KeyEvent.VK_4);
+        hk.put(NativeKeyEvent.VC_5, KeyEvent.VK_5);
+        hk.put(NativeKeyEvent.VC_6, KeyEvent.VK_6);
+        hk.put(NativeKeyEvent.VC_7, KeyEvent.VK_7);
+        hk.put(NativeKeyEvent.VC_8, KeyEvent.VK_8);
+        hk.put(NativeKeyEvent.VC_9, KeyEvent.VK_9);
+        hk.put(NativeKeyEvent.VC_0, KeyEvent.VK_0);
+        hk.put(NativeKeyEvent.VC_UNDERSCORE, KeyEvent.VK_UNDERSCORE);
+        hk.put(NativeKeyEvent.VC_EQUALS, KeyEvent.VK_EQUALS);
+        hk.put(NativeKeyEvent.VC_BACKSPACE, KeyEvent.VK_BACK_SPACE);
+        hk.put(NativeKeyEvent.VC_TAB, KeyEvent.VK_TAB);
+        hk.put(NativeKeyEvent.VC_CAPS_LOCK, KeyEvent.VK_CAPS_LOCK);
+        hk.put(NativeKeyEvent.VC_SHIFT_L,KeyEvent.VK_SHIFT);
+        hk.put(NativeKeyEvent.VC_SHIFT_R,KeyEvent.VK_SHIFT);
+        hk.put(NativeKeyEvent.VC_CONTROL_L, KeyEvent.VK_CONTROL);
+        hk.put(NativeKeyEvent.VC_CONTROL_R, KeyEvent.VK_CONTROL);
+        // WINDOWS BUTTON MISSED
+        hk.put(NativeKeyEvent.VC_ALT_L, KeyEvent.VK_ALT);
+        hk.put(NativeKeyEvent.VC_ALT_R, KeyEvent.VK_ALT);
+        hk.put(NativeKeyEvent.VC_SPACE, KeyEvent.VK_SPACE);
+        hk.put(NativeKeyEvent.VC_OPEN_BRACKET, KeyEvent.VK_OPEN_BRACKET);
+        hk.put(NativeKeyEvent.VC_CLOSE_BRACKET, KeyEvent.VK_CLOSE_BRACKET);
+        hk.put(NativeKeyEvent.VC_SLASH, KeyEvent.VK_SLASH);
+        hk.put(NativeKeyEvent.VC_SEMICOLON, KeyEvent.VK_SEMICOLON);
+        //DOUBLE QUOTE
+        hk.put(NativeKeyEvent.VC_ENTER, KeyEvent.VK_ENTER);
+        hk.put(NativeKeyEvent.VC_COMMA, KeyEvent.VK_COMMA);
+        hk.put(NativeKeyEvent.VC_PERIOD, KeyEvent.VK_PERIOD);
+        hk.put(NativeKeyEvent.VC_BACK_SLASH, KeyEvent.VK_BACK_SLASH);
+        //RIGHT WINDOW BUTTON MISSED
+        hk.put(NativeKeyEvent.VC_A, KeyEvent.VK_A);
+	hk.put(NativeKeyEvent.VC_B, KeyEvent.VK_B);
+	hk.put(NativeKeyEvent.VC_C, KeyEvent.VK_C);
+	hk.put(NativeKeyEvent.VC_D, KeyEvent.VK_D);
+	hk.put(NativeKeyEvent.VC_E, KeyEvent.VK_E);
+	hk.put(NativeKeyEvent.VC_F, KeyEvent.VK_F);
+	hk.put(NativeKeyEvent.VC_G, KeyEvent.VK_G);
+	hk.put(NativeKeyEvent.VC_H, KeyEvent.VK_H);
+	hk.put(NativeKeyEvent.VC_I, KeyEvent.VK_I);
+	hk.put(NativeKeyEvent.VC_J, KeyEvent.VK_J);
+	hk.put(NativeKeyEvent.VC_K, KeyEvent.VK_K);
+	hk.put(NativeKeyEvent.VC_L, KeyEvent.VK_L);
+	hk.put(NativeKeyEvent.VC_M, KeyEvent.VK_M);
+	hk.put(NativeKeyEvent.VC_N, KeyEvent.VK_N);
+	hk.put(NativeKeyEvent.VC_O, KeyEvent.VK_O);
+	hk.put(NativeKeyEvent.VC_P, KeyEvent.VK_P);
+	hk.put(NativeKeyEvent.VC_Q, KeyEvent.VK_Q);
+	hk.put(NativeKeyEvent.VC_R, KeyEvent.VK_R);
+	hk.put(NativeKeyEvent.VC_S, KeyEvent.VK_S);
+	hk.put(NativeKeyEvent.VC_T, KeyEvent.VK_T);
+	hk.put(NativeKeyEvent.VC_U, KeyEvent.VK_U);
+	hk.put(NativeKeyEvent.VC_V, KeyEvent.VK_V);
+	hk.put(NativeKeyEvent.VC_W, KeyEvent.VK_W);
+	hk.put(NativeKeyEvent.VC_X, KeyEvent.VK_X);
+	hk.put(NativeKeyEvent.VC_Y, KeyEvent.VK_Y);
+	hk.put(NativeKeyEvent.VC_Z, KeyEvent.VK_Z);
+        hk.put(NativeKeyEvent.VC_HOME, KeyEvent.VK_HOME);
+        hk.put(NativeKeyEvent.VC_END, KeyEvent.VK_END);
+        hk.put(NativeKeyEvent.VC_INSERT, KeyEvent.VK_INSERT);
+        hk.put(NativeKeyEvent.VC_PAGE_UP, KeyEvent.VK_PAGE_UP);
+        hk.put(NativeKeyEvent.VC_PAGE_DOWN, KeyEvent.VK_PAGE_DOWN);
+        hk.put(NativeKeyEvent.VC_DELETE, KeyEvent.VK_DELETE);
+        hk.put(NativeKeyEvent.VC_UP, KeyEvent.VK_UP);
+        hk.put(NativeKeyEvent.VC_DOWN, KeyEvent.VK_DOWN);
+        hk.put(NativeKeyEvent.VC_LEFT, KeyEvent.VK_LEFT);
+        hk.put(NativeKeyEvent.VC_RIGHT, KeyEvent.VK_RIGHT);
+        hk.put(NativeKeyEvent.VC_NUM_LOCK, KeyEvent.VK_NUM_LOCK);
+        hk.put(NativeKeyEvent.VC_KP_DIVIDE, KeyEvent.VK_DIVIDE);
+        hk.put(NativeKeyEvent.VC_KP_MULTIPLY, KeyEvent.VK_MULTIPLY);
+        hk.put(NativeKeyEvent.VC_KP_SUBTRACT, KeyEvent.VK_MINUS);
+        hk.put(NativeKeyEvent.VC_KP_ADD, KeyEvent.VK_PLUS);
+        hk.put(NativeKeyEvent.VC_KP_ENTER, KeyEvent.VK_ENTER);
+        /*CHECK BELOW SOME PROBLEM */
+        hk.put(NativeKeyEvent.VC_KP_SEPARATOR, KeyEvent.VK_PERIOD);
+       	hk.put(NativeKeyEvent.VC_KP_0, KeyEvent.VK_NUMPAD0);
+	hk.put(NativeKeyEvent.VC_KP_1, KeyEvent.VK_NUMPAD1);
+	hk.put(NativeKeyEvent.VC_KP_2, KeyEvent.VK_NUMPAD2);
+	hk.put(NativeKeyEvent.VC_KP_3, KeyEvent.VK_NUMPAD3);
+	hk.put(NativeKeyEvent.VC_KP_4, KeyEvent.VK_NUMPAD4);
+	hk.put(NativeKeyEvent.VC_KP_5, KeyEvent.VK_NUMPAD5);
+	hk.put(NativeKeyEvent.VC_KP_6, KeyEvent.VK_NUMPAD6);
+	hk.put(NativeKeyEvent.VC_KP_7, KeyEvent.VK_NUMPAD7);
+	hk.put(NativeKeyEvent.VC_KP_8, KeyEvent.VK_NUMPAD8);
+	hk.put(NativeKeyEvent.VC_KP_9, KeyEvent.VK_NUMPAD9);
 
     }
     
@@ -139,14 +250,20 @@ public class AutomatedRobot
         
         for(int kr=0;kr<repetition_count;kr++)
         {
-            for(int i=3;i<st.length-1;i++)
+            robot.keyRelease(KeyEvent.VK_SHIFT);
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+                robot.keyRelease(KeyEvent.VK_ALT);
+                robot.keyRelease(KeyEvent.VK_Q);
+                robot.mouseRelease(InputEvent.BUTTON1_MASK);
+                robot.mouseRelease(InputEvent.BUTTON2_MASK);
+                
+            for(int i=0;i<st.length;i++)
             {
                 System.out.println("KILL VARIABLE :"+this.killsession);
                 if(this.killsession==true)
                 {
                     System.exit(0);
                 }
-                
                 String tokenString=st[i];
                 
                 System.out.println("TOKEN PART:"+tokenString);
@@ -162,7 +279,7 @@ public class AutomatedRobot
                         if(tokenList[1].equals("p"))
                         {
                             System.out.println("KEYCODE P GOT:"+tokenList[2]);
-                            //System.out.println("CHECKED P VALUE:"+KeyEvent.getKeyText(Integer.parseInt(tokenList[2])));
+                            System.out.println("CHECKED P VALUE:"+NativeKeyEvent.getKeyText(Integer.parseInt(tokenList[2])));
 
                             robot.keyPress(hk.get(Integer.parseInt(tokenList[2])));
                             System.out.println("TOKEN PRESSED:"+KeyEvent.getKeyText(hk.get(Integer.parseInt(tokenList[2]))));
@@ -172,7 +289,7 @@ public class AutomatedRobot
                         else if(tokenList[1].equals("r"))
                         {
                             System.out.println("KEYCODE R GOT:"+tokenList[2]);
-                            //System.out.println("CHECKED R VALUE:"+KeyEvent.getKeyText(Integer.parseInt(tokenList[2])));
+                            System.out.println("CHECKED R VALUE:"+NativeKeyEvent.getKeyText(Integer.parseInt(tokenList[2])));
                             
                             robot.keyRelease(hk.get(Integer.parseInt(tokenList[2])));
                             System.out.println("TOKEN RELEASED:"+KeyEvent.getKeyText(hk.get(Integer.parseInt(tokenList[2]))));
@@ -249,6 +366,8 @@ public class AutomatedRobot
             robot.keyRelease(KeyEvent.VK_CONTROL);
             robot.keyRelease(KeyEvent.VK_ALT);
             robot.keyRelease(KeyEvent.VK_Q);
+            robot.mouseRelease(InputEvent.BUTTON1_MASK);
+            robot.mouseRelease(InputEvent.BUTTON2_MASK);
         }
     }
 }
